@@ -20,10 +20,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Miliki ERP',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const Scaffold(
-        body: Center(child: Text('Supabase Initialized Cleanly!')),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Miliki ERP',
+            style: const TextStyle(
+              fontFamily: 'Poppins',
+            ),
+          ),
+          backgroundColor: Colors.lightBlue,
+        ),
       ),
     );
   }
