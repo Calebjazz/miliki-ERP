@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 void main() async {
-  // Ensure Flutter engine bindings are ready for async native code
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Supabase configuration
+  // 1. Load the environment file first
+  await dotenv.load(fileName: ".env");
+
+  // 2. Initialize Supabase by pulling the values dynamically
   await Supabase.initialize(
-    url: 'https://krvmtozwlynvkraunjzu.supabase.co',
-    publishableKey: 'sb_publishable_O2Qp3XwaIcbatTmAvACjYw_e7gCWTNh',
+    url: dotenv.env['SUPABASE_URL'] ?? '',
+    publishableKey: dotenv.env['SUPABASE_PUBLISHABLE_KEY'] ?? '',
   );
 
   runApp(const MyApp());
