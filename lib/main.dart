@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'Poppins',
             ),
           ),
-          backgroundColor: const Color.fromARGB(255, 110, 202, 5),
+          backgroundColor: const Color(0xFF00FF41),
         ),
       ),
     );
