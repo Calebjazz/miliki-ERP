@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LandingPage extends StatefulWidget {
-  const LandingPage({super.key});
+class SplashPage extends StatefulWidget {
+  const SplashPage({super.key});
 
   @override
-  State<LandingPage> createState() => _LandingPageState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _LandingPageState extends State<LandingPage> {
+class _SplashPageState extends State<SplashPage> {
   final PageController pageController = PageController();
   int currentPage = 0;
 
