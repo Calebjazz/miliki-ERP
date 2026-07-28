@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'features/splash/presentation/splash_page.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -24,18 +27,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Miliki ERP',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Miliki ERP',
-            style: const TextStyle(
-              fontFamily: 'Poppins',
-            ),
-          ),
-          backgroundColor: const Color.fromARGB(255, 90, 216, 1),
-        ),
-      ),
+      theme: ThemeData(
+      textTheme: GoogleFonts.urbanistTextTheme(Theme.of(context).textTheme),
+      primarySwatch: Colors.green),
+      initialRoute: '/',
+      routes: {'/': (context) => const SplashPage()},
     );
   }
 }
